@@ -7,13 +7,25 @@ type Node struct {
 	next *Node
 }
 
-func ShowNode(p *Node) {
+func insertToTail(head *Node, val int) (*Node, bool) {
+	p := head
+	if p == nil {
+		return nil, false
+	}
+
 	for p != nil {
-		fmt.Printf("-> %v/%p\t", p.val, p)
-		//fmt.Println(p)
+		if p.next == nil {
+			tmpNode := &Node{
+				val:  val,
+				next: nil,
+			}
+			p.next = tmpNode
+			return head, true
+		}
 		p = p.next
 	}
-	fmt.Println()
+
+	return nil, false
 }
 
 func linkList(len int) *Node {
@@ -79,6 +91,73 @@ func linkedNode2(nums []int) (ret *Node) {
 	}
 
 	return ret
+}
+
+// 前提是，链表所有节点中的val唯一
+func del(head *Node, val int) (*Node, bool) {
+	p := head
+	pre := p
+	if p == nil {
+		return nil, false
+	}
+
+	//head, middle, tail
+	//head
+	if head.val == val {
+		//处理head指针未销毁问题
+		head.val = head.next.val
+		head.next = head.next.next
+		return head, true
+	}
+	pre = p
+	p = p.next
+	//middle
+	for p != nil {
+		if p.val == val {
+			pre.next = p.next
+			return head, true
+		}
+		pre = pre.next
+		p = p.next
+	}
+	//tail
+
+	return nil, false
+}
+
+// return the new node pointer
+func update(head *Node, val, target int) (*Node, bool) {
+	p := head
+	for p != nil {
+		if p.val == val {
+			p.val = target
+			return head, true
+		}
+		p = p.next
+	}
+
+	return nil, false
+}
+
+func showNode(p *Node) {
+	for p != nil {
+		fmt.Printf("-> %v/%p\t", p.val, p)
+		//fmt.Println(p)
+		p = p.next
+	}
+	fmt.Println()
+}
+
+func find(p *Node, val int) (ret *Node, b bool) {
+
+	for p != nil {
+		if p.val == val {
+			return p, true
+		}
+		p = p.next
+	}
+
+	return nil, false
 }
 
 //func linkList(length int) *Node { // 1.尾插法 插入节点 head>>node1>>node2  <<tail

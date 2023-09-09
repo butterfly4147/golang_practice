@@ -8,14 +8,30 @@ import (
 func TestNode(t *testing.T) {
 	head := linkList(3)
 	//traverse
-	ShowNode(head)
+	showNode(head)
+	fmt.Println(find(head, 2))
+	_, okInsert := insertToTail(head, 5)
+	if okInsert {
+		showNode(head)
+	}
+	//head是旧变量只是重新赋值；okDel是新变量
+	_, okDel := del(head, 0)
+	if okDel {
+		showNode(head)
+	}
+	_, okUpdate := update(head, 2, 6)
+	if okUpdate {
+		showNode(head)
+	}
 
 	println("---------------")
 	nodes := linkedNode([]int{2, 34, 4})
-	ShowNode(nodes)
+	showNode(nodes)
+
 	println("---------------")
 	nodes2 := linkedNode2([]int{2, 34, 4})
-	ShowNode(nodes2)
+	showNode(nodes2)
+
 }
 
 func TestPointer(t *testing.T) {
