@@ -11,6 +11,8 @@ type Node struct {
 	next *Node
 }
 
+// 【方法接收器参数：值赋值】
+
 // 需要方法接收器n!=nil
 func (n *Node) append(val interface{}) error {
 	head := n
