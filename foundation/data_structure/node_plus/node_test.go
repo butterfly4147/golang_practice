@@ -5,6 +5,9 @@ import (
 	"testing"
 )
 
+/*
+最终设计方案，参照golang的slice切片append设计方法
+*/
 func TestNode(t *testing.T) {
 	head := &Node{
 		val:  "head",
@@ -26,4 +29,33 @@ func TestNode2(t *testing.T) {
 	fmt.Println(head2)
 
 	head2.traverse()
+}
+
+func TestNode3(t *testing.T) {
+	var head3 *Node
+	println(head3 == nil)
+
+	head3.append3(1)
+	head3.append3(2)
+	fmt.Println(head3)
+
+	head3.traverse()
+}
+
+func TestNode4(t *testing.T) {
+	var head3 *Node
+	println(head3 == nil)
+
+	head3.append3(1)
+	head3.append3(2)
+	fmt.Println(head3)
+
+	head3.traverse()
+
+	var sl []int
+	sl = make([]int, 2)
+	fmt.Printf("%v\n", sl)
+	sl = append(sl, 1, 2)
+	sl = append(sl, 1, 2, 3, 4, 5, 5, 2, 32, 2, 2, 2, 3)
+	fmt.Printf("%v\n", sl)
 }
