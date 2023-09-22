@@ -2,6 +2,7 @@ package struct_case
 
 import (
 	"fmt"
+	"sort"
 	"testing"
 )
 
@@ -62,6 +63,7 @@ func TestUserSlice(t *testing.T) {
 	us := []*user{
 		{"tome", 12},
 		{"Tome", 123},
+		nil,
 		{"Jerry", 1},
 	}
 
@@ -100,4 +102,25 @@ func TestStringSlice(t *testing.T) {
 
 	fmt.Printf("ss: %v\n", ss)
 	fmt.Printf("p: %v\n", p)
+}
+
+func TestUserSliceSort(t *testing.T) {
+	us := []*user{
+		{"tome", 12},
+		{"Tome", 123},
+		nil,
+		{"Jerry", 1},
+	}
+
+	sort.Slice(us, func(i, j int) bool {
+		if us[i] == nil {
+			return true
+		}
+		if us[j] == nil {
+			return false
+		}
+
+		return us[i].age < us[j].age
+	})
+	printS(us)
 }
