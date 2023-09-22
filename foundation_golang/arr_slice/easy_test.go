@@ -30,3 +30,27 @@ func TestArrAndSlice(t *testing.T) {
 	}
 	fmt.Printf("%v\n", dataSlice)
 }
+
+// slice切片赋值操作是指针复制，共用同一个底层数组
+func TestSliceAssignment(t *testing.T) {
+	a := []int{1, 2}
+	var b []int
+	b = a
+
+	b[0] += 10
+
+	fmt.Printf("%v\n", a)
+	fmt.Printf("%v\n", b)
+}
+
+// arr数组赋值操作是值复制，底层数据是两份不同的数组
+func TestArrAssignment(t *testing.T) {
+	a := [2]int{1, 2}
+	var b [2]int
+	b = a
+
+	b[0] += 1
+
+	fmt.Printf("%v\n", a)
+	fmt.Printf("%v\n", b)
+}
