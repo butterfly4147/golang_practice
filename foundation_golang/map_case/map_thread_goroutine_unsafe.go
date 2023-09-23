@@ -12,7 +12,7 @@ type Resource struct {
 }
 
 // TODO:还原不了map不安全场景。https://zhuanlan.zhihu.com/p/495998623
-func main() {
+func main2() {
 	r := Resource{m: make(map[string]int)}
 
 	wg := sync.WaitGroup{}

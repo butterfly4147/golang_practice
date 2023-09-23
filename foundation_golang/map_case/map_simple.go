@@ -10,7 +10,7 @@ import (
 var wg = sync.WaitGroup{}
 
 // todo: 怎么控制goroutine输出顺序？
-func main() {
+func main1() {
 	ch := make(chan int, 1)
 
 	for i := 0; i < 10; i++ {

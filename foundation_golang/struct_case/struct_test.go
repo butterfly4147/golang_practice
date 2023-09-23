@@ -2,8 +2,10 @@ package struct_case
 
 import (
 	"fmt"
+	"os"
 	"sort"
 	"testing"
+	"unsafe"
 )
 
 type abc struct {
@@ -123,4 +125,24 @@ func TestUserSliceSort(t *testing.T) {
 		return us[i].age < us[j].age
 	})
 	printS(us)
+}
+
+type data struct {
+	os.File
+	name string
+}
+
+func TestAnonymous(t *testing.T) {
+	//d := data{
+	//	File: os.File{},
+	//	name: "",
+	//}
+	//println(d)
+
+	v3 := struct {
+		a byte
+		b []int
+		c byte
+	}{}
+	fmt.Printf("v3: %d, %d\n", unsafe.Alignof(v3), unsafe.Sizeof(v3))
 }
