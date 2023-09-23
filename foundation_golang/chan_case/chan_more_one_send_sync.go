@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func main1() {
 	// channel 初始化
 	c := make(chan int, 10)
 	dfs := len(c)

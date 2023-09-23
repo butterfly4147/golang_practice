@@ -6,7 +6,7 @@ import (
 	"sync"
 )
 
-func main() {
+func main4() {
 	buffer := make(chan int)
 	a := make([]int, 0)
 	// 消费者

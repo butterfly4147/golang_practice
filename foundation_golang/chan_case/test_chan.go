@@ -2,7 +2,7 @@ package main
 
 import "time"
 
-func main() {
+func main6() {
 	ch := make(chan int)
 	println("1.")
 	//go func() {

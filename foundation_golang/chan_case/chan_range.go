@@ -8,7 +8,7 @@ import (
 func chanRange() {
 }
 
-func main() {
+func main5() {
 	wg := sync.WaitGroup{}
 	wg.Add(1)
 	//defer wg.Done()

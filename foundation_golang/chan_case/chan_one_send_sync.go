@@ -2,7 +2,7 @@ package main
 
 import "sync"
 
-func main() {
+func main3() {
 	// channel 初始化
 	c := make(chan int, 10)
 	// 用来 recevivers 同步事件的
