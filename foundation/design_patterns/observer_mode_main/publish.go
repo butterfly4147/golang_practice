@@ -19,6 +19,14 @@ func (i *Item) register(observer Observer) {
 	i.observerList = append(i.observerList, observer)
 }
 
+// implement
+func (i *Item) registerBackFunc(observer Observer, fn func()) {
+	i.observerList = append(i.observerList, observer)
+
+	//when the observer is notified, call the fn()
+
+}
+
 func (i *Item) deRegister(observer Observer) {
 	for idx, obs := range i.observerList {
 		if obs == observer {

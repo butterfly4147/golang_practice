@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 const times = 1000
 
@@ -28,4 +31,14 @@ func testCap() {
 	for i := 0; i < times; i++ {
 		m[i] = i
 	}
+}
+
+func TestBase(t *testing.T) {
+	m := map[string]struct{ age int }{
+		"a": {age: 1},
+	}
+
+	//m["a"].age = 1 //Cannot assign to m["a"].age
+
+	fmt.Println(m)
 }
