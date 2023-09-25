@@ -7,7 +7,7 @@ import (
 
 type X int
 
-func main() {
+func main1() {
 	test1()
 	//test2()
 }

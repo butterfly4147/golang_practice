@@ -28,7 +28,7 @@ func (*B) bp() {
 
 }
 
-func main() {
+func main2() {
 	var b B
 
 	t := reflect.TypeOf(&b)

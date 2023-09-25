@@ -12,7 +12,7 @@ func (XX) Test(x, y int) (int, error) {
 	return x + y, fmt.Errorf("err: %d", x+y)
 }
 
-func main() {
+func main3() {
 	var a XX
 	v := reflect.ValueOf(&a)
 	m := v.MethodByName("Test")
