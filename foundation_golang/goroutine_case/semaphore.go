@@ -13,7 +13,7 @@ const (
 	Weight = 2 // 信号量的权重
 )
 
-func main() {
+func main5() {
 	names := []string{
 		"asong1",
 		"asong2",

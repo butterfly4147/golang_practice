@@ -2,7 +2,7 @@ package main
 
 import "log"
 
-func main() {
+func main4() {
 	//store
 	store := make(chan int)
 	done := make(chan bool)

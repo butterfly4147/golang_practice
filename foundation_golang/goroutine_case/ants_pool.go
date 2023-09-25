@@ -22,7 +22,7 @@ func demoFunc() {
 	fmt.Println("Hello World!")
 }
 
-func main() {
+func main1() {
 	defer ants.Release()
 
 	runTimes := 1000

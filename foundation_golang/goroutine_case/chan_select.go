@@ -16,7 +16,7 @@ func fibonacci(ch chan int, done chan struct{}) {
 		}
 	}
 }
-func main() {
+func main3() {
 	ch := make(chan int)
 	done := make(chan struct{})
 	go func() {

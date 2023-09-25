@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func main6() {
 	ctx, cancel := context.WithCancel(context.Background())
 	go Speak(ctx)
 	time.Sleep(10 * time.Second)
