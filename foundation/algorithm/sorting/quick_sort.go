@@ -1,9 +1,5 @@
 package main
 
-import (
-	"log"
-)
-
 // EConstJudgeRange the judgement range
 type EConstJudgeRange int
 
@@ -55,8 +51,8 @@ func quickSort(salaries []int, lIdx int, rIdx int) {
 	quickSort(salaries, right+1, rIdx)
 }
 
-func main() {
-	salaries := []int{10, 30, 80, 90, 40, 50, 70}
-	quickSort(salaries, 0, len(salaries)-1)
-	log.Printf("%+v\n", salaries)
-}
+//func main() {
+//	salaries := []int{10, 30, 80, 90, 40, 50, 70}
+//	quickSort(salaries, 0, len(salaries)-1)
+//	log.Printf("%+v\n", salaries)
+//}
