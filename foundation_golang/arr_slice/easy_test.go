@@ -98,3 +98,48 @@ func test(is []int) {
 		is[i]++
 	}
 }
+
+func TestArrElem(t *testing.T) {
+	arr := [5]int{1, 2, 3, 4}
+	swap(&arr[0], &arr[1])
+
+	fmt.Printf("%v\n", arr)
+}
+
+// swapped the value and the ptr of value
+func swap(x *int, y *int) {
+	x, y = y, x
+	//tmp := x
+	//x = y
+	//y = tmp
+}
+
+// only swapped the value
+func swapOptimize(x *int, y *int) {
+	*x, *y = *y, *x
+}
+
+func TestArrElem2(t *testing.T) {
+	num1 := 10
+	num2 := 20
+
+	fmt.Println("Before swap: num1 =", num1, "num2 =", num2)
+
+	swap2(&num1, &num2)
+
+	fmt.Println("After swap: num1 =", num1, "num2 =", num2)
+}
+func swap2(a, b *int) {
+	*a, *b = *b, *a
+}
+
+func TestArrElem3(t *testing.T) {
+	arr := [5]int{1, 2, 3, 4}
+	swap3(&arr, 0, 1)
+
+	fmt.Printf("%v\n", arr)
+}
+
+func swap3(arr *[5]int, x int, y int) {
+	arr[x], arr[y] = arr[y], arr[x]
+}
