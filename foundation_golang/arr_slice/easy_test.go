@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"testing"
 )
 
@@ -108,7 +109,10 @@ func TestArrElem(t *testing.T) {
 
 // swapped the value and the ptr of value
 func swap(x *int, y *int) {
+	println(x, y)
+	fmt.Println(reflect.TypeOf(x), reflect.TypeOf(y))
 	x, y = y, x
+	println(x, y)
 	//tmp := x
 	//x = y
 	//y = tmp
@@ -142,4 +146,38 @@ func TestArrElem3(t *testing.T) {
 
 func swap3(arr *[5]int, x int, y int) {
 	arr[x], arr[y] = arr[y], arr[x]
+}
+
+func TestArrElem4(t *testing.T) {
+	num1 := 10
+	num2 := 20
+
+	ptr1 := &num1
+	ptr2 := &num2
+
+	fmt.Println("Before swap: ptr1 =", ptr1, "ptr2 =", ptr2)
+	fmt.Println("Before swap: *ptr1 =", *ptr1, "*ptr2 =", *ptr2)
+
+	swapPtr(ptr1, ptr2)
+
+	fmt.Println("After swap: ptr1 =", ptr1, "ptr2 =", ptr2)
+	fmt.Println("After swap: *ptr1 =", *ptr1, "*ptr2 =", *ptr2)
+}
+
+func swapPtr(a, b *int) {
+	//*a, *b = *b, *a
+	println(a, b)
+	fmt.Println(*a, *b)
+	a, b = b, a
+	println(a, b)
+	fmt.Println(*a, *b)
+}
+
+func TestArrElem5(t *testing.T) {
+	arr := [5]int{1, 2, 3, 4}
+	//Cannot assign to &arr[0]——在Go语言中，无法直接交换数组元素的地址。地址是不可赋值的。
+	//&arr[0], &arr[1] = &arr[1], &arr[0]
+	fmt.Println(reflect.TypeOf(&arr[0]))
+
+	fmt.Printf("%v\n", arr)
 }

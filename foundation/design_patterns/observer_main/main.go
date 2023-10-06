@@ -6,7 +6,7 @@ import (
 )
 
 func TestObserverMode(t *testing.T) {
-	//pub := observer_mode.NewItem("Tome")
+	//pub := observer.NewItem("Tome")
 }
 
 func main() {

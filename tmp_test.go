@@ -50,3 +50,17 @@ func TestSameVariable(t *testing.T) {
 	//When the curly braces above are removed, the scope will be changed.
 	println(x)
 }
+
+func TestStr(t *testing.T) {
+	strs := []string{}
+	fmt.Printf("a%vb\n", strs)
+	fmt.Println(len(strs))
+
+	strs2 := []string{""}
+	fmt.Printf("a%vb\n", strs2)
+	fmt.Println(len(strs2))
+
+	strs3 := []string{"", "a"}
+	fmt.Printf("a%vb\n", strs3)
+	fmt.Println(len(strs3))
+}
