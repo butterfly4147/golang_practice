@@ -146,3 +146,20 @@ func TestAnonymous(t *testing.T) {
 	}{}
 	fmt.Printf("v3: %d, %d\n", unsafe.Alignof(v3), unsafe.Sizeof(v3))
 }
+
+type Person struct {
+	foot *Foot
+	name string
+	age  int
+}
+type Foot struct {
+	size int
+}
+
+func TestStructOk(t *testing.T) {
+	var p Person
+	println(p.foot.size)
+	//if _, ok := p.foot.size; ok{
+	//
+	//}
+}
