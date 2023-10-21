@@ -30,3 +30,9 @@ func TestConstructType(t *testing.T) {
 }
 
 //----------------------------------
+
+func TestEqual(t *testing.T) {
+	num := 123.5
+	equal := reflect.TypeOf(num).Kind() == reflect.Float64
+	fmt.Println("kind is float64: ", equal)
+}

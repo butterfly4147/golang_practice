@@ -75,3 +75,13 @@ func testErrorInterface() error {
 func wrapDo() *os.PathError {
 	return nil
 }
+
+type Node struct {
+	Data interface{}
+	Next *Node
+}
+type LinkList *Node
+
+func TestNil(t *testing.T) {
+	println()
+}
