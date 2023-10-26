@@ -64,3 +64,14 @@ func TestStr(t *testing.T) {
 	fmt.Printf("a%vb\n", strs3)
 	fmt.Println(len(strs3))
 }
+
+func TestIf(t *testing.T) {
+	testIf(2)
+}
+
+func testIf(i int) int {
+	if i < 3 {
+		return -1
+	}
+	return 1
+}
