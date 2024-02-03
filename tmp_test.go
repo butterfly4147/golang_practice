@@ -69,7 +69,15 @@ func TestIf(t *testing.T) {
 	testIf(2)
 }
 
-func testIf(i int) int {
+type Opt struct {
+	num int
+}
+
+func testIf(i int, opts ...Opt) int {
+	opts = append(opts, Opt{num: 2})
+	for k, j := range opts {
+		fmt.Println(k, j)
+	}
 	if i < 3 {
 		return -1
 	}

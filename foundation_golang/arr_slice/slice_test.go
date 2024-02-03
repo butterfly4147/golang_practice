@@ -63,3 +63,45 @@ func slidingWindow(size int, input []int) [][]int {
 
 	return r
 }
+
+type Engine struct {
+	groups []int //store all groups
+}
+
+func TestInitAppendOrAssignDirectly(t *testing.T) {
+	engine1 := &Engine{}
+	engine1.groups = []int{1}
+	fmt.Println(engine1)
+
+	engine2 := &Engine{}
+	engine2.groups = append(engine2.groups, 2)
+	fmt.Println(engine2)
+}
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
